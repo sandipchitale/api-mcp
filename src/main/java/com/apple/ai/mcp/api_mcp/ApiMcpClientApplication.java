@@ -33,9 +33,13 @@ public class ApiMcpClientApplication {
 				System.out.println(mcpSyncClient.getClientInfo());
 				McpSchema.ListToolsResult listToolsResult = mcpSyncClient.listTools();
 				listToolsResult.tools().forEach((McpSchema.Tool tool) -> {
-					System.out.print("Calling Tool: ");
-					System.out.println(tool);
-					McpSchema.CallToolResult callToolResult = mcpSyncClient.callTool(new McpSchema.CallToolRequest(tool.name(), new HashMap<String, Object>()));
+
+					HashMap<String, Object> arguments = new HashMap<>();
+					if (tool.name().equals("getPersonById")) {
+						arguments.put("id", 1);
+					}
+					System.out.println("Calling with args:  " + arguments + " " + tool);
+					McpSchema.CallToolResult callToolResult = mcpSyncClient.callTool(new McpSchema.CallToolRequest(tool.name(), arguments));
 					System.out.println("Tool result: ");
 					System.out.println(callToolResult.content());
 				});

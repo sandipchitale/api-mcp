@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 @Profile("server")
@@ -45,6 +47,16 @@ public class ApiMcpApplication {
 		public List<Person> getPeople() {
 			return people;
 		}
+
+		@Tool(description = "Get person by given id")
+		public Optional<Person> getPersonById(int id) {
+			return people
+					.stream()
+					.filter((Person person) -> {
+						return person.id() == id;
+					})
+					.findFirst();
+		}
 	}
 
 	@RestController
@@ -59,6 +71,11 @@ public class ApiMcpApplication {
         @GetMapping("/people")
 		public List<Person> getPeople() {
 			return personService.getPeople();
+		}
+
+		@GetMapping("/people/{id}")
+		public ResponseEntity<Person> getPersonById(int id) {
+			return ResponseEntity.of(personService.getPersonById(id));
 		}
 	}
 
