@@ -38,7 +38,7 @@ public class ApiMcpApplication {
 
 		public PersonService() {
 			people.add(new Person(1, "Sandip"));
-			people.add(new Person(2, "Priti"));
+			people.add(new Person(2, "Tim"));
 		}
 
 		@Tool(description = "Get registered people")
