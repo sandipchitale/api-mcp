@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-mcp-client
+  ai:
+    mcp:
+      client:
+        enabled: true
+        name: api-mcp-server-client
+        type: SYNC
+        sse:
+          connections:
+            api-mcp-server:
+              url: "http://localhost:8765/"
+        version: 1.0.0
+
+logging:
+  level:
+    root: off
