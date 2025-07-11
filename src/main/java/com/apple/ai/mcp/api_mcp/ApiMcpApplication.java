@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -74,7 +75,7 @@ public class ApiMcpApplication {
 		}
 
 		@GetMapping("/people/{id}")
-		public ResponseEntity<Person> getPersonById(int id) {
+		public ResponseEntity<Person> getPersonById(@RequestParam int id) {
 			return ResponseEntity.of(personService.getPersonById(id));
 		}
 	}
