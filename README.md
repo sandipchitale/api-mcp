@@ -32,3 +32,29 @@ Calling with args:  {} Tool[name=getPeople, description=Get registered people, i
 Tool result: 
 [TextContent[audience=null, priority=null, text=[{"id":1,"name":"Sandip"},{"id":2,"name":"Tim"}]]]
 ```
+
+## Using MCP Inspector
+
+You can also run, configure and use MCP Inspector tool from anthropic:
+
+### Run MCP Inspector
+
+```bash
+$ node --version
+v23.6.1
+$ npx @modelcontextprotocol/inspector
+Starting MCP inspector...
+⚙️ Proxy server listening on localhost:6277
+🔑 Session token: 1c54561452d5e1136bd90dbaf655315894791dd27a3d7b8dde7d9a093b7500cc
+   Use this token to authenticate requests or set DANGEROUSLY_OMIT_AUTH=true to disable auth
+
+🚀 MCP Inspector is up and running at:
+   http://localhost:6274/?MCP_PROXY_AUTH_TOKEN=1c54561452d5e1136bd90dbaf655315894791dd27a3d7b8dde7d9a093b7500cc
+```
+Once it is running configure and use it like this:
+
+![MCP INspector](screenshots/mcp-inspector.png)
+
+The Bearer token value from above example run is `1c54561452d5e1136bd90dbaf655315894791dd27a3d7b8dde7d9a093b7500cc`
+
+As you can see you can list and even invoke the tools.
