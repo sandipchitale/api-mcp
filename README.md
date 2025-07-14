@@ -4,7 +4,7 @@ A simple MCP Server and Client using Spring AI
 
 It basically demonstrates how to implement a MCP server that can sit side dby side with api '/api/people' in this case.
 
-# Server App (`com.apple.ai.mcp.api_mcp.ApiMcpApplication` )
+# Server App (`com.apple.ai.mcp.api_mcp.server.ApiMcpApplication` )
 
 Provides a single tool:
 
@@ -14,7 +14,7 @@ Tool[name=getPeople, description=Get registered people, inputSchema=JsonSchema[t
 
 See [application-server.yaml](src/main/resources/application-server.yaml) for MCP server configuration.
 
-# Client App ( `com.apple.ai.mcp.api_mcp.ApiMcpClientApplication` )
+# Client App ( `com.apple.ai.mcp.api_mcp.client.ApiMcpClientApplication` )
 
 Create a MCP client that can talk to the MCP server above, list tools and call them.
 

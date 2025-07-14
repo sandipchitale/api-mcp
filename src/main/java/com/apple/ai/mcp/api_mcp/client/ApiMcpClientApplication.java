@@ -1,4 +1,4 @@
-package com.apple.ai.mcp.api_mcp;
+package com.apple.ai.mcp.api_mcp.client;
 
 import io.modelcontextprotocol.client.McpSyncClient;
 import io.modelcontextprotocol.spec.McpSchema;

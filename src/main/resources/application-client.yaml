@@ -1,6 +1,8 @@
 spring:
   application:
     name: api-mcp-client
+  main:
+    web-application-type: none
   ai:
     mcp:
       client:

@@ -1,4 +1,4 @@
-package com.apple.ai.mcp.api_mcp;
+package com.apple.ai.mcp.api_mcp.server;
 
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.annotation.Tool;
