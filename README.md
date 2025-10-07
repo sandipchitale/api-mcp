@@ -53,8 +53,6 @@ Starting MCP inspector...
 ```
 Once it is running configure and use it like this:
 
-![MCP INspector](screenshots/mcp-inspector.png)
-
-The Bearer token value from above example run is `1c54561452d5e1136bd90dbaf655315894791dd27a3d7b8dde7d9a093b7500cc`
+![MCP Inspector](screenshots/mcp-inspector.png)
 
 As you can see you can list and even invoke the tools.
