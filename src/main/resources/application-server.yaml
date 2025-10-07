@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: api-mcp
+  ai:
+    mcp:
+      server:
+        protocol: streamable
+        name: api-mcp-server
+        version: 1.0.0
+        type: SYNC
+        instructions: "This server provides people information"
+        capabilities:
+          tool: true
+          resource: false
+          prompt: false
+          completion: false
+        base-url: ""
+        enabled: true
+        streamable-http:
+          mcp-endpoint: /mcp
+server:
+  port: 8765
+
+logging:
+  level:
+    root: off
+    sun:
+      rmi: off
+    javax:
+      management: off
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
